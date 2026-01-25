@@ -1,3 +1,6 @@
+import datetime
+import re
+
 def check_df(df, tipo=""):
     if tipo == "simple":
         print("¿Cuántas filas y columnas hay en el conjunto de datos?")
@@ -88,7 +91,6 @@ def check_df(df, tipo=""):
             )
             display(df.describe(include="object"))
 
-
 def identificacion_valores_problem(df, columnas=[]):
     print('###################################################################################')
     print('3.1.1. Proporción de NULOS en cada una de las columnas del conjunto de datos:')
@@ -111,3 +113,42 @@ def identificacion_valores_problem(df, columnas=[]):
             outliers = df[(df[var] < limite_inferior) | (df[var] > limite_superior)]
             print(f'Número de outliers en la columna "{var}": {outliers.shape[0]}')
         print('###################################################################################')
+
+def eur_good(v):
+    # 1. Caso datetime
+    if isinstance(v, datetime.datetime):
+        # Tomamos mes, día, hora, minuto → últimos 4 números
+        digits = f"{v.month}{v.day}{v.hour}{v.minute}"
+        return float(digits[0] + "." + digits[1:])
+
+    # 2. Caso string
+    if isinstance(v, str):
+        # Aseguramos formato decimal
+        if re.fullmatch(r"\d+\.\d+", v):
+            # añadimos un decimal más si solo tiene 2
+            entero, dec = v.split(".")
+            if len(dec) == 2:
+                dec += "0"
+            return float(entero + "." + dec)
+
+        # si es otra cosa rara, lo intentamos convertir
+        v = int(v)
+
+    # 3. Caso entero (ya convertido o original)
+    if isinstance(v, int):
+        s = str(v)
+
+        # 4 dígitos → x.xxx
+        if len(s) == 4:
+            return float(s[0] + "." + s[1:])
+
+        # 3 dígitos → 0.xxx
+        if len(s) == 3:
+            return float("0." + s)
+
+        # 1 dígito (ej: 1 o 5)
+        if len(s) == 1:
+            return float(f"{s}.000")
+
+    # 4. Fallback defensivo
+    return float(v)
