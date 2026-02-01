@@ -4,7 +4,8 @@ Este proyecto explora los patrones que influyen en la decisión de contratación
 
 Objetivo
 
-    Analizar los datos de campañas de marketing de una empresa Fintech para identificar y predecir los factores que hacen que un cliente contrate un depósito.
+    Analizar los datos de campañas de marketing de una empresa Fintech para identificar y predecir 
+    los factores que hacen que un cliente contrate un depósito.
 
 Dataset
 
