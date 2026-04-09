@@ -3,7 +3,8 @@
 Este proyecto forma parte nuestro Trabajo Final de Máster (TFM) enfocado en la aplicación de análisis de datos y modelado predictivo para optimizar el marketing directo en el sector de la Banca y Servicios Financieros.
 
 Problema de Negocio
-    La entidad financiera enfrenta el desafío de maximizar la conversión de depósitos a plazo fijo mediante telemarketing.  Actualmente, existe:
+
+La entidad financiera enfrenta el desafío de maximizar la conversión de depósitos a plazo fijo mediante telemarketing.  Actualmente, existe:
 
     - Eficiencia operativa baja: Se realizan múltiples llamadas al mismo cliente sin garantía de éxito.
 
