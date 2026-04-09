@@ -22,8 +22,7 @@ Dataset
     Contenido: Datos crudos y procesados
 
 Metodología
-
-    El notebook sigue una metodología rigurosa de ciencia de datos:
+El notebook sigue una metodología rigurosa de ciencia de datos:
 
     Definición Estratégica: Establecimiento de objetivos generales, tácticas y árbol de indicadores (KPIs).
 
@@ -38,6 +37,14 @@ Metodología
     Elasticidad de Conversión: Relación entre variaciones de mercado y ventas.
 
     Tasa de Recurrencia: Análisis de clientes con historial de éxito previo.
+
+Principales Hallazgos (Insights)
+
+    Ventana de Oportunidad: Se detectó un punto positivo de conversión en periodos con Euríbor superior al 4.8%.
+    
+    Perfil de Alta Conversión: Los perfiles administrativos con educación universitaria muestran una estabilidad financiera que correlaciona positivamente con la suscripción de depósitos.
+    
+    Fatiga del Cliente: El análisis de frecuencia de contacto sugiere un límite óptimo de llamadas antes de que la probabilidad de éxito decaiga drásticamente.
 
 Entregables
 
